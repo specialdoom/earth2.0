@@ -1,30 +1,26 @@
-<nav>
-  <div>
-    <img src="earth2.0.svg" alt="Logo" />
-    <a href="/">HOME</a>
-    <a href="/about">ABOUT</a>
-    <a href="/projects">PROJECTS</a>
-  </div>
-  <div>
-    <a href="/" class="box">DONATE</a>
-  </div>
-</nav>
+<div class="container">
+  <nav>
+    <div>
+      <img src="earth2.0.svg" alt="Logo" />
+      <a href="/">HOME</a>
+      <a href="/about">ABOUT</a>
+      <a href="/projects">PROJECTS</a>
+    </div>
+    <div>
+      <button class="box">DONATE</button>
+    </div>
+  </nav>
 
-<slot />
+  <slot />
+</div>
 
 <style>
-  .container:before {
-    content: '';
-    position: absolute;
-    top: -1px;
-    right: -1px;
-    transform: translate(50%, -50%);
-    width: 700px;
-    height: 700px;
-    border-radius: 50%;
-    background: linear-gradient(#2baa83, #b3dc7c);
-    mix-blend-mode: darken;
+  div.container {
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
   }
+
   nav {
     display: flex;
     align-items: center;
@@ -57,7 +53,8 @@
     background-size: 100% 3px, 3px 100%, 30% 3px;
     background-position: left bottom, left bottom, left top;
     height: 36px;
-    width: 160px;
+    width: auto;
+    min-width: 160px;
     color: black;
     text-decoration: unset;
     display: flex;
@@ -68,8 +65,8 @@
   }
 
   .box:hover {
-    background-image: linear-gradient(purple, purple),
-      linear-gradient(purple, purple), linear-gradient(purple, purple);
+    background-image: linear-gradient(black, black),
+      linear-gradient(black, black), linear-gradient(black, black);
     background-repeat: no-repeat;
     background-size: 100% 3px, 3px 100%, 100% 3px;
     background-position: left bottom, left bottom, left top;
